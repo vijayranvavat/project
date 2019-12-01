@@ -14,7 +14,7 @@
     - 
       ignore_errors: true
       name: "remove docker images"
-      shell: "docker image rm -f vijayranvat/mavenproject"
+      shell: "docker image rm -f vijayranavat/mavenproject"
     - 
       name: "create docker image"
-      shell: "docker run -d --name webmagic_demo -p 8090:8080 vijayranvat/mavenproject"
+      shell: "docker run -d --name webmagic_demo -p 8090:8080 vijayranavat/mavenproject"
