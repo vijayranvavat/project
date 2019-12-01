@@ -1,0 +1,20 @@
+--- 
+- 
+  become: true
+  hosts: all
+  tasks: 
+    - 
+      ignore_errors: true
+      name: "stop previous version docker"
+      shell: "docker stop mavenproject"
+    - 
+      ignore_errors: true
+      name: "remove stopped container"
+      shell: "docker rm -f mavenproject"
+    - 
+      ignore_errors: true
+      name: "remove docker images"
+      shell: "docker image rm -f vijayranvat/mavenproject"
+    - 
+      name: "create docker image"
+      shell: "docker run -d --name webmagic_demo -p 8090:8080 vijayranvat/mavenproject"
